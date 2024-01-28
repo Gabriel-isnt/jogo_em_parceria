@@ -1,6 +1,6 @@
 import funcoes_jogo as fn
-import historia as cena
 
+# classe
 # ainda pensando em um nome melhor para essa classe
 class Geral:
     def __init__(self, vivo, nome, saude, ataque):
@@ -8,7 +8,7 @@ class Geral:
         self.nome = nome
         self.saude = saude
         self.ataque = ataque
-        self.inventario = []
+        self.inventario = {}
 
     def esta_vivo(self):
         if self.saude <= 0:
@@ -16,18 +16,28 @@ class Geral:
         
         self.vivo = True
 
+    def atacar(self, dano, pessoa):
+        pessoa.saude -= dano
+
+        
+
+# funções que usam instancias
+def menu(inventario):
+    itens = inventario.copy()
+
+    for opcao, (item, quantidade) in enumerate(itens.items(), start=1):
+        print(f'{opcao} -- {item}(x{quantidade})')
     
+
 # o jogo
-
-cena.historia_inicial()
-cena.explicacao()
-
-nome_player = fn.nome()
 nome_inimigo = "Dante"
 
-jogador = Geral(True, nome_player, 4, 1)
+jogador = Geral(True, "nada", 4, 1)
 inimigo = Geral(True, nome_inimigo, 4, 1)
 
 jogador.inventario = fn.item_surpresa(3, jogador.inventario)
 inimigo.inventario = fn.item_surpresa(3, inimigo.inventario)
 
+print("---------------")
+menu(jogador.inventario)
+print("---------------")
