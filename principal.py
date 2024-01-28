@@ -11,10 +11,7 @@ class Geral:
         self.inventario = {}
 
     def esta_vivo(self):
-        if self.saude <= 0:
-            self.vivo = False
-        
-        self.vivo = True
+        self.vivo = self.saude > 0
 
     def atacar(self, dano, pessoa):
         pessoa.saude -= dano
