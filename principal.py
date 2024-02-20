@@ -1,3 +1,4 @@
+import historia as cena
 import funcoes_jogo as fn
 
 # classe
@@ -38,3 +39,5 @@ inimigo.inventario = fn.item_surpresa(3, inimigo.inventario)
 print("---------------")
 menu(jogador.inventario)
 print("---------------")
+
+cena.easter_egg()
