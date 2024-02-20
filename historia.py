@@ -67,3 +67,16 @@ def explicacao():
     print("Hora de \"aproveitar a vida da forma certa\"...\n")
     input()
     print("--------------------------------------------")
+
+def easter_egg():
+    print('Per me si va nella città dolente')
+    input()
+    print('Per me si va nell\'eterno dolore')
+    input()
+    print('Per me si va tra la perdura gente')
+    input()
+    print('Lasciante ogni speranza, voi che entrate')
+    input()
+
+
+
